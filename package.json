@@ -1,0 +1,61 @@
+{
+  "name": "express-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require test/setup.js",
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "predeploy": "npm audit && npm run migrate-production",
+    "deploy": "git push heroku master",
+    "migrate": "postgrator --config postgrator-config.js",
+    "migrate-production": "postgrator --config postgrator-production-config.js"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2018
+    },
+    "env": {
+      "node": true,
+      "es6": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:node/recommended"
+    ]
+  },
+  "keywords": [],
+  "engines": {
+    "node": "10.15.3"
+  },
+  "authors": {
+    "Harrison Chen": "hhc50331994@gmail.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^7.0.0",
+    "eslint": "^6.0.1",
+    "express": "^4.17.1",
+    "helmet": "^3.19.0",
+    "http": "0.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.18.1",
+    "morgan": "^1.9.1",
+    "node-fetch": "^2.6.0",
+    "pg": "^7.11.0",
+    "socket.io": "^2.2.0",
+    "uuid": "^3.3.2",
+    "ws": "^7.1.0",
+    "xss": "^1.0.6"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
+    "nodemon": "^1.19.1",
+    "postgrator-cli": "^3.1.0",
+    "supertest": "^4.0.2"
+  }
+}
